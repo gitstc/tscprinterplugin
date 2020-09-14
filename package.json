@@ -1,0 +1,20 @@
+{
+    "name": "com.stc.tscprinterplugin",
+    "version": "1.0.0",
+    "cordova": {
+      "platforms": [
+        "android",
+        "ios"
+      ]
+    },
+    "description": "Printer Plugin for the TSC Alpha 3RB Printer",
+    "issue": "",
+    "keywords": [
+      "cordova",
+      "cordova-android",
+      "cordova-ios"
+    ],
+    "author": "The Solutions Unit",
+    "license": "Apache 2.0"
+  }
+  

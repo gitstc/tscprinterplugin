@@ -1,0 +1,46 @@
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.stc.tscprinter"
+    version="1.0.0">
+
+    <name>TSC Printer Plugin</name>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+    <description>Printer Plugin for the TSC Alpha 3RB Printer</description>
+
+    <license>MIT</license>
+
+    <js-module src="www/TSCPrinterPlugin.js" name="TSCPrinterPlugin">
+        <clobbers target="TSCPrinterPlugin" />
+    </js-module>
+
+    <!-- android -->
+    
+    <platform name="android">
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.BLUETOOTH" />
+            <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+            <permission android:name="android.permission.BLUETOOTH" android:label="BLUETOOTH" />
+            <permission android:name="android.permission.BLUETOOTH_ADMIN" />
+        </config-file>
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="TSCPrinterPlugin" >
+                <param name="android-package" value="com.stc.tscprinter.TSCPrinterPlugin"/>
+            </feature>
+        </config-file>
+        
+        <source-file src="src/android/TSCPrinterPlugin.java"
+            target-dir="src/com/stc/tscprinter" />
+        <source-file src="src/android/PrinterPlugin.java"
+            target-dir="src/com/stc/tscprinter" />
+
+        <source-file src="src/android/tscsdk.jar" target-dir="libs" />
+    </platform>
+    
+</plugin>
